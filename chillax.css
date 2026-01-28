@@ -148,7 +148,7 @@
 /**transparent part LVL II**/
 /*small profile modal*/
 .userPopout-2j1gM4 {
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(var(--glass-blur-amount));
 }
 
 html.theme-dark .userPopout-2j1gM4 {
@@ -646,7 +646,7 @@ html.theme-light #bd-editor-controls {
 .monaco-editor-background,
 .monaco-editor .inputarea.ime-input,
 .monaco-editor .margin {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(var(--glass-blur-amount));
 }
 
 html.theme-dark .floating-window.resizable,
