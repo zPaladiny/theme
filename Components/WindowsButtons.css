@@ -4,6 +4,7 @@
 }
 
 .leading_c38106::before {
+    content: "‏‏‎ 𝓐𝓶𝓮́𝓵𝓲𝓪 ❤";
     font-size: 12px;
     font-weight: 900;
     font-family: "Poiret one" !important;
@@ -18,6 +19,7 @@
 }
 
 .leading_c38106:hover::before {
+    content: "‏‏‎ Eu te amo muito Amélia 💕";
     letter-spacing: 2px;
 }
 
