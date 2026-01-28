@@ -31,7 +31,7 @@
     --background-image: var(--wallpaper);
     --bg-opacity: 100%;
     /*bg dev suggestions*/
-    --wallpaper: url("https://warrayquipsome.github.io/Chillax/Wallpapers/chillax-default.png");
+    --wallpaper: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-dark-bg.png");
     /*modern background selection*/
     --modern-dark-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-dark-bg.png");
     --modern-light-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-light-bg.png");
@@ -41,10 +41,10 @@
 /*window*/ /*dark mode*/
 :root.theme-dark {
     --window-margin: 20px; /*must be above 20px*/
-    --window-colour: #0009;
+    --window-colour: rgba(0, 0, 0, 0.315);
     --window-blur: 5px;
     --window-border-radius: 10px;
-    --sidebar-colour: rgb(36, 36, 36);
+    --sidebar-colour: rgb(248, 12, 12);
 }
 
 /*window*/ /*light mode*/
@@ -101,7 +101,7 @@
 
     /* placeholder texts/values */
     /* input fields */
-    --chillax-input-field: "Life is so much easier when you just take a moment to chill";
+    --chillax-input-field: "Entre todos os caminhos, eu escolheria você mil vezes.";
     /* input fields  when the channel is locked*/
     --chillax-input-field-locked: "Unfortunately, you can't chill in this channel";
     /* typing indicator: when a single person is typing */
@@ -170,40 +170,3 @@
 /*.theme-light {*/
 /*    --FG-cards-banner-background: transparent !important;*/
 /*}*/
-
-
-/*Permissions*/
-/*
-- You do not have the rights to use our theme name Chillax™ on other projects
-- You do not have the rights to remove our theme watermark in the theme
-- You do not have the rights to change this theme author/dev/maintainer name to anyone
-*/
-
-/*credits*/
-/*
-========================= Chillax Squad =========================
- Wq                                       Owner & Dev
- LofiTurtle                               Dev & Maintainer
- Inmoresentum                             Dev & Maintainer
- Demented_Elmo                            Dev
-=================================================================
- Embeds                                   by Alexis WyvernZu
- Active Now CSS                           by Cedrick
- Memberlist until hover                   by Cedrick
- Hide User Buttons until Hover            by Commie Axolotl
- Center profile badge, avatar and name    by Commie Axolotl
- Account Details Grid                     by Dablulite
- Blurple recolour                         by DevilBro
- Emoji Replace                            by DevilBro
- Settings Icons                           by DevilBro
- Connection Issue Let Me Be               by Disease
- Radial Status                            by Gibbu
- About Me Clamp                           by ItMeSarah
- Better Jump to Present Button            by Lonk
- Better Mark As Read Button               by Lonk
- IconPack                                 by Lavender
- Discolored                               by Nyri4
- Better Spotify Control                   by Uri
-=================================================================
-*/
-/*I really want to give a special shoutout to all of you for supporting me in this theme, thank you all.*/
