@@ -31,10 +31,10 @@
     --background-image: var(--wallpaper);
     --bg-opacity: 100%;
     /*bg dev suggestions*/
-    --wallpaper: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-dark-bg.png");
+    --wallpaper: url("https://zpaladiny.github.io/theme/Wallpapers/modern-dark-bg.png");
     /*modern background selection*/
-    --modern-dark-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-dark-bg.png");
-    --modern-light-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-light-bg.png");
+    --modern-dark-bg: url("https://zpaladiny.github.io/theme/Wallpapers/modern-dark-bg.png");
+    --modern-light-bg: url("https://zpaladiny.github.io/theme/Wallpapers/modern-light-bg.png");
 }
 
 
@@ -101,13 +101,13 @@
 
     /* placeholder texts/values */
     /* input fields */
-    --chillax-input-field: "Entre todos os caminhos, eu escolheria você mil vezes.";
+    --chillax-input-field: "Amélia, amar você é acordar todos os dias com a certeza de que escolhi o amor certo.";
     /* input fields  when the channel is locked*/
-    --chillax-input-field-locked: "Unfortunately, you can't chill in this channel";
+    --chillax-input-field-locked: "Infelizmente, você não pode relaxar neste canal.";
     /* typing indicator: when a single person is typing */
-    --chillax-input-typing-indicator-one-person: "is smashing some buttons";
+    --chillax-input-typing-indicator-one-person: "está apertando alguns botões";
     /* typing indicator: when more than one person is typing */
-    --chillax-input-typing-indicator-many-person: "are smashing some buttons";
+    --chillax-input-typing-indicator-many-person: "estão apertando alguns botões";
 
     /* scroller (by default transparent) */
     --chillax-scroller-color: transparent; /* change `transparent` to some other hex color to make it visible */
