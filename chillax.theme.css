@@ -42,7 +42,7 @@
 /*window*/ /*dark mode*/
 :root.theme-dark {
     --window-margin: 20px; /*must be above 20px*/
-    --window-colour: rgba(0, 0, 0, 0.315);
+    --window-colour: rgba(0, 0, 0, 0.096);
     --window-blur: 5px;
     --window-border-radius: 10px;
     --sidebar-colour: rgb(248, 12, 12);
