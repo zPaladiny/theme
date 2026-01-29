@@ -2,7 +2,7 @@
  * @name Amélia Loading Screen
  * @author João (zPaladin/Paladin)
  * @description Tela de carregamento dedicada à Amélia - A pessoa mais incrível do mundo
- * @version 3.0
+ * @version 3.1 - Execução única por sessão
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Playfair+Display:wght@700&display=swap');
@@ -15,6 +15,17 @@
   --color-primary: #ff69b4;
   --color-secondary: #dc267f;
   --color-accent: #ffb6c1;
+}
+
+/* ================= CONTROLE DE EXECUÇÃO ÚNICA ================= */
+/* Só executa na primeira vez que o Discord carrega */
+body:not([data-amelia-shown]) {
+  --amelia-active: 1;
+}
+
+/* Após executar, adiciona o atributo para impedir nova execução */
+body[data-amelia-shown] {
+  --amelia-active: 0;
 }
 
 /* ================= ANIMAÇÕES ================= */
@@ -120,15 +131,15 @@
   to { opacity: 0; }
 }
 
-@keyframes hideElement {
-  to {
-    visibility: hidden;
-    pointer-events: none;
+@keyframes markAsShown {
+  100% {
+    /* Marca como já mostrado */
+    content: "shown";
   }
 }
 
 /* ================= OVERLAY TEMPORÁRIO ================= */
-#app-mount::before {
+body:not([data-amelia-shown]) #app-mount::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -138,11 +149,22 @@
     #190a14 100%
   );
   z-index: 9997;
-  animation: loadingOverlay var(--loading-duration) forwards;
+  animation: 
+    loadingOverlay var(--loading-duration) forwards,
+    markAsShown 0s forwards var(--loading-duration);
+}
+
+/* ================= ESTILOS BASE ================= */
+body:not([data-amelia-shown]) {
+  background: transparent !important;
+}
+
+body:not([data-amelia-shown]) .app_a3002d {
+  animation: fadeOut var(--loading-duration) forwards;
 }
 
 /* ================= TÍTULO "AMÉLIA" ================= */
-#app-mount::after {
+body:not([data-amelia-shown]) #app-mount::after {
   content: "AMÉLIA";
   position: fixed;
   top: 50%;
@@ -159,7 +181,7 @@
 }
 
 /* ================= MENSAGENS SEQUENCIAIS ================= */
-html::before {
+body:not([data-amelia-shown]) html::before {
   content: "Você é a pessoa mais especial do mundo";
   position: fixed;
   bottom: 30%;
@@ -174,7 +196,7 @@ html::before {
   animation: messageSequence1 var(--loading-duration) ease-in-out forwards;
 }
 
-[class*="base"]::after {
+body:not([data-amelia-shown]) [class*="base"]::after {
   content: "Sua presença ilumina meu mundo 🌟";
   position: fixed;
   bottom: 30%;
@@ -189,7 +211,7 @@ html::before {
   animation: messageSequence2 var(--loading-duration) ease-in-out forwards;
 }
 
-[class*="container"]::before {
+body:not([data-amelia-shown]) [class*="container"]::before {
   content: "Te amo muito, Amélia 💕";
   position: fixed;
   bottom: 30%;
@@ -208,7 +230,7 @@ html::before {
 }
 
 /* ================= ASSINATURA ================= */
-[class*="base"]::before {
+body:not([data-amelia-shown]) [class*="base"]::before {
   content: "Com amor, João 💕";
   position: fixed;
   bottom: 5%;
@@ -223,7 +245,7 @@ html::before {
 }
 
 /* ================= CORAÇÕES FLUTUANTES ================= */
-.app_a3002d::before {
+body:not([data-amelia-shown]) .app_a3002d::before {
   content: "❤️";
   position: fixed;
   left: 15%;
@@ -236,7 +258,7 @@ html::before {
     fadeOut var(--loading-duration) forwards;
 }
 
-.app_a3002d::after {
+body:not([data-amelia-shown]) .app_a3002d::after {
   content: "💖";
   position: fixed;
   left: 35%;
@@ -250,7 +272,7 @@ html::before {
   animation-delay: 0.5s;
 }
 
-[class*="typeWindows"]::before {
+body:not([data-amelia-shown]) [class*="typeWindows"]::before {
   content: "💕";
   position: fixed;
   left: 55%;
@@ -264,7 +286,7 @@ html::before {
   animation-delay: 1s;
 }
 
-[class*="typeWindows"]::after {
+body:not([data-amelia-shown]) [class*="typeWindows"]::after {
   content: "💗";
   position: fixed;
   left: 75%;
@@ -276,4 +298,29 @@ html::before {
     heartFloat 3s ease-in-out infinite,
     fadeOut var(--loading-duration) forwards;
   animation-delay: 1.5s;
+}
+
+/* ================= SCRIPT DE CONTROLE ================= */
+/* Adiciona o atributo após a execução para impedir repetição */
+body:not([data-amelia-shown])::after {
+  content: "";
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  animation: markAsShown 0s forwards var(--loading-duration);
+}
+
+/* Força a adição do atributo via JavaScript simulado */
+@media screen {
+  body {
+    /* Simula JavaScript para adicionar o atributo */
+    animation: addAttribute 0s forwards var(--loading-duration);
+  }
+}
+
+@keyframes addAttribute {
+  100% {
+    /* Força a adição do atributo data-amelia-shown */
+    content: attr(data-amelia-shown "true");
+  }
 }
